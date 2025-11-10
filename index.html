@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodie_World</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script> 
+    <script src="https://unpkg.com/aframe-environment-component@1.5.x/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MozillaReality/ammo.js@8bbc0ea/builds/ammo.wasm.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.3/dist/aframe-physics-system.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
+</head>
+<body>
+  <a-scene physics="driver: ammo; debug: true" background="color: #FAFAFA">
+    <a-entity camera look-controls="" position="0 3 12"  wasd-controls="fly: false "></a-entity>
+    <!-- <a-entity gltf-model="chocolate_donuts.glb" position="0 0 0" scale="0.0005 0.0005 0.0005"></a-entity> -->
+    <a-entity environment="preset: forest"></a-entity>
+    <!-- <a-entity gltf-model="croissant.glb" scale="0.1 0.1 0.1" position="1 1 1"></a-entity> -->
+
+
+
+    <!-- floor -->
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="0 1 5" scale="5 0.5 5"></a-box>
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="0 1 10" scale="5 0.5 5"></a-box>
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="0 1 15" scale="5 0.5 5"></a-box>
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="0 1 20" scale="5 0.5 5"></a-box>
+
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="5 1 5" scale="5 0.5 5"></a-box>
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="5 1 10" scale="5 0.5 5"></a-box>
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="5 1 15" scale="5 0.5 5"></a-box>
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="5 1 20" scale="5 0.5 5"></a-box>
+
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="10 1 5" scale="5 0.5 5"></a-box>
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="10 1 10" scale="5 0.5 5"></a-box>
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="10 1 15" scale="5 0.5 5"></a-box>
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="10 1 20" scale="5 0.5 5"></a-box>
+
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="15 1 5" scale="5 0.5 5"></a-box>
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="15 1 10" scale="5 0.5 5"></a-box>
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="15 1 15" scale="5 0.5 5"></a-box>
+    <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="15 1 20" scale="5 0.5 5"></a-box>
+
+    <!-- walls -->
+<a-box material="src: floor.png" ammo-shape="type: box; sphereRadius: NaN" ammo-body="gravity: undefined undefined; type: static" position="7.5  4 22.6" scale="20  5.5 0.5"></a-box>  
+<a-box material="src: floor.png" ammo-shape="type: box; sphereRadius: NaN" ammo-body="gravity: undefined undefined; type: static" position="7.5  4 2.6" scale="20   5.5 0.5"></a-box>  
+<a-box material="src: floor.png" ammo-shape="type: box; sphereRadius: NaN" ammo-body="gravity: undefined undefined; type: static" position="17.5 4 12.6" scale="0.5 5.5 20"></a-box>  
+<a-box material="src: floor.png" ammo-shape="type: box; sphereRadius: NaN" ammo-body="gravity: undefined undefined; type: static" position="-2.5 4 12.6" scale="0.5 5.5 20"></a-box>  
+
+
+
+
+    </a-scene>
+  
+</body>
+</html>
