@@ -4,30 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Foodie_World</title>
-    <script src="aframe.js"></script> 
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script> 
     <script src="https://unpkg.com/aframe-environment-component@1.5.x/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/MozillaReality/ammo.js@8bbc0ea/builds/ammo.wasm.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.3/dist/aframe-physics-system.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
+
+    <script src="grap.js"></script>
+    <script src="Spawn_Buttons.js"></script>
 </head>
 <body>
   <a-scene physics="driver: ammo; debug: true" background="color: #FAFAFA">
-    <a-entity camera look-controls="" position="0 3 12"  wasd-controls="fly: false ">
-      <a-entity cursor="" raycaster="object: .grappable" geometry="primitive: circle"></a-entity>
-    </a-entity>
-    <!-- <a-entity gltf-model="chocolate_donuts.glb" position="1 2 3" scale="0.0005 0.0005 0.0005"></a-entity> -->
+   <a-entity  look-controls wasd-controls="acceleration: 80; fly: false" rotation="0 0 0" id="cam" position="0 4 13" camera>
+            <a-box  ammo-body="type: kinematic" ammo-shape="type: box"></a-box>
+              <a-entity  id="curs" cursor="fuse: false"  raycaster="objects: .draggable" geometry="primitive: circle; radius: 0.005" position="0 0 -0.5" material="color: red; shader: flat">
+                <a-light id="light" position="0 1.56044 0.93299" light="decay: 0.55; intensity: 2; type: point"></a-light>
+          </a-entity>
+          </a-entity>
     <a-entity environment="preset: forest"></a-entity>
     <a-text value="Corissant" position="-0.9 5.6 3" scale="2 2 2"></a-text>   
-    <a-text value="Corissant" position="3.1 5.6 3" scale="2 2 2"></a-text>   
+    <a-text value="Donut"  position="3.3 5.6 3" scale="2 2 2"></a-text>   
     <a-text value="CupCake" position="7.1 5.6 3" scale="2 2 2"></a-text>   
     <a-text value="Ice-Cream" position="11 5.6 3" scale="2 2 2"></a-text>   
     <a-text value="Turkey" position="14.8 5.6 3" scale="2 2 2"></a-text>   
     <a-entity gltf-model="Croissant.glb" ammo-body="type: static" ammo-shape="type: hull  ; offset: 0 0 0.4" rotation="90 0 0" scale="0.5 0.5 0.5" position="0 4 3"></a-entity>  
-    <a-entity gltf-model="chocolate_donuts.glb" scale="0.0003 0.0003 0.0003" position="4 3.5 3"></a-entity>
-    <a-entity gltf-model="Cupcake.glb" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.8 0" scale="2 2 2" position="8 3 3"></a-entity>
-    <a-entity gltf-model="Ice Cream.glb" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.6 0" scale="2 2 2" position="12 3 3"></a-entity>
-    <a-entity gltf-model="Turkey.glb" scale="2.3 2.3 2.3" position="15.5 4 3" rotation="0 90 90"></a-entity>
-
+    <a-entity gltf-model="Donut.glb" donut  class="draggable" scale="2 2 2" rotation="90 0 0" ammo-body="type: static" ammo-shape="type: hull  ; offset: 0 0 0" position="4 3.5 3"></a-entity>
+    <a-entity gltf-model="Cupcake.glb" ammo-body="type: static" ammo-shape="type: hull; offset: 0 0.6 0" scale="2 2 2" position="8 3 3"></a-entity>
+    <a-entity gltf-model="Ice Cream.glb" ammo-body="type: static" ammo-shape="type: hull; offset: 0 0.6 0" scale="2 2 2" position="12 3 3"></a-entity>
+    <a-entity gltf-model="Turkey.glb" scale="2.3 2.3 2.3" ammo-body="type: static" ammo-shape="type: hull  ; offset: 0 0.5 0" position="15.5 3.5 3" rotation="0 90 90"></a-entity>
+          
 
 
     <!-- floor -->
@@ -52,10 +57,10 @@
     <a-box material="src: floor.png" ammo-body="type: static" ammo-shape="type: box" position="15 1 20" scale="5 0.5 5"></a-box>
 
     <!-- walls -->
-<a-box material="src: floor.png" ammo-shape="type: box; sphereRadius: NaN" ammo-body="gravity: undefined undefined; type: static" position="7.5  4 22.6" scale="20  5.5 0.5"></a-box>  
-<a-box material="src: floor.png" ammo-shape="type: box; sphereRadius: NaN" ammo-body="gravity: undefined undefined; type: static" position="7.5  4 2.6" scale="20   5.5 0.5"></a-box>  
-<a-box material="src: floor.png" ammo-shape="type: box; sphereRadius: NaN" ammo-body="gravity: undefined undefined; type: static" position="17.5 4 12.6" scale="0.5 5.5 20"></a-box>  
-<a-box material="src: floor.png" ammo-shape="type: box; sphereRadius: NaN" ammo-body="gravity: undefined undefined; type: static" position="-2.5 4 12.6" scale="0.5 5.5 20"></a-box> 
+<a-box material="src: floor.png" ammo-body="type: static" ammo-shape="type: box;" position="7.5  4 22.6" scale="20  5.5 0.5"></a-box>  
+<a-box material="src: floor.png" ammo-body="type: static" ammo-shape="type: box;" position="7.5  4 2.6" scale="20   5.5 0.5"></a-box>  
+<a-box material="src: floor.png" ammo-body="type: static" ammo-shape="type: box;" position="17.5 4 12.6" scale="0.5 5.5 20"></a-box>  
+<a-box material="src: floor.png" ammo-body="type: static" ammo-shape="type: box;" position="-2.5 4 12.6" scale="0.5 5.5 20"></a-box> 
 
     <!-- sealing -->
     <a-box material="src: floor.png" ammo-shape="type: box" ammo-body="type: static" position="0 7 5" scale="5 0.5 5"></a-box>
