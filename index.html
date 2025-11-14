@@ -14,7 +14,7 @@
     <script src="Spawn_Buttons.js"></script>
 </head>
 <body>
-  <a-scene physics="driver: ammo; debug: true" background="color: #FAFAFA">
+  <a-scene physics="driver: ammo; debug: false" background="color: #FAFAFA">
    <a-entity  look-controls wasd-controls="acceleration: 80; fly: false" rotation="0 0 0" id="cam" position="0 4 13" camera>
             <a-box  ammo-body="type: kinematic" ammo-shape="type: box"></a-box>
               <a-entity  id="curs" cursor="fuse: false"  raycaster="objects: .draggable" geometry="primitive: circle; radius: 0.005" position="0 0 -0.5" material="color: red; shader: flat">
