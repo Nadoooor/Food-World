@@ -1,9 +1,4 @@
 AFRAME.registerComponent('grap', {
-    schema: {
-        
-    },
-    
-    
     init: function () {
       console.log("installed");
         var nom = new Audio('Nom.mp3');
@@ -45,7 +40,7 @@ AFRAME.registerComponent('grap', {
       const Trans = new Ammo.btTransform();
       Trans.setIdentity();
       Trans.setOrigin(new Ammo.btVector3(campos.x, campos.y, campos.z));
-      Trans.setRotation(new Ammo.btQuaternion(camQuaternion.x, camQuaternion.y, camQuaternion.z, camQuaternion.w));
+      Trans.setRotation(new Ammo.btQuaternion(camQuaternion.x, camQuaternion.y + 4, camQuaternion.z, camQuaternion.w));
       body.setWorldTransform(Trans);
       body.activate();
 
